@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    
+    color: #1C1F24;
+}
+
+/*************  nav start ****************/
+#header .nav {
+    width: 50%;
+    margin-left: 47%;
+}
+
+#header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+}
+
+#header nav ul li {
+    padding-left: 2rem;
+}
+
+#header nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+a.active {
+    border: 2px solid red;
+}
+
+/*************  nav end ****************/
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: auto;
+}
+form label:last-of-type {
+    cursor: pointer;
+    margin: 20px 0 10px 0;
+}
+form input {
+    border: 1px solid lightgray;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    margin-bottom: 8%;
+    outline: none;
+    
+}
+form label input {
+    display: none;
+}
+form textarea {
+    border: 1px solid #1C1F24;
+    
+}
+form i {
+    color: #1C1F24;
+}
+form#dataForm button {
+    border-style: none;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    background-color: #1C1F24;
+    overflow: hidden;
+    text-align: center;
+    width: 131px;
+    border-radius: 2px;
+    padding: 6px 12px;
+    margin-top: 4%;
+}
+footer {
+    text-align: center;
+}

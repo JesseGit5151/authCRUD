@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="/login">
+            <h1>Welcome Back</h1>
+            <label for="username">Name: </label>
+            <input type="text" name="username" required>
+            <label for="password">Password: </label>
+            <input type="password" name="password" required>
+            <span><a href="">Forgot password</a></span>
+            <input type="submit" value="Sign In" class="submitBtn">
+            <span>Don't have an account? <a href="/register">Sign up</a></span>
+        </form>
+        <div class="regHeroImage"></div>
+    </div>
+    
+</body>
+</html>

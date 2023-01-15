@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*************  nav start ****************/
+#header .nav {
+    width: 50%;
+    margin-left: 47%;
+}
+
+#header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+}
+
+#header nav ul li {
+    padding-left: 2rem;
+}
+
+#header nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/*************  nav end ****************/
+
+.tagcontainer {
+    width: 87%;
+    display: flex;
+    margin: auto;
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+}
+.tagcontainer .tag {
+    border-style: none;
+    cursor: pointer;
+    outline: none;
+    text-decoration-line: none;
+    background-color: whitesmoke;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 7px;
+    padding: 6px 12px;
+    margin: 0 0.3rem 0 0;
+}
+.tag:focus, .tag:active {
+    background-color: black;
+}
+
+/* a.active {
+    border: 2px solid red;
+} */
+.active {
+    color: red;
+}
+
+img {
+    width: inherit;
+    object-fit: cover;
+    height: 200px;
+}
+
+.cardscontainer {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 37px;
+    align-items: center;
+}
+.display-cards {
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    background-color: whitesmoke;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 11%);
+    position: relative;
+}
+.display-cards h3, p {
+    margin-left: 6px;
+}
+.display-cards span {
+    position: absolute;
+    bottom: 1rem;
+    left: .3rem;
+    background-color: #283845;
+    font-size: initial;
+    padding: 0 3%;
+    border-radius: 3px;
+    text-align: center;
+    color: white;
+}
+.display-cards .fa {
+    position: absolute;
+    border: none;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.display-cards .fa:hover {
+    color: darkred;
+}

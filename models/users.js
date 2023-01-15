@@ -6,11 +6,15 @@ const userSchema = new mongoose.Schema({
   username: String,
   hash: String,
   salt: String,
-  favorites: [{
+  favorites: [
+    {
+      _id: false,
       category: String,
-      Name: String,
-      Description: String,
-      Image: String,
-    }]
+      name: String,
+      description: String,
+      image: String,
+    },
+  ],
 });
-module.exports = mongoose.model('users', userSchema)
+
+module.exports = mongoose.model("users", userSchema);

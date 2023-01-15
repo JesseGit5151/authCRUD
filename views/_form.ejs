@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Fav Internet things</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/formstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body id = "/form">
+    <!--include header-->
+    <%- include('include/_header') %>
+    <!--/include header-->
+
+    <h1>Welcome to Your fav internet things</h1>
+
+    <form id="dataForm" action="/form" method="post" enctype="multipart/form-data">
+      <label for="category">Topic: </label>
+      <input type="text" id="category" name="category" required />
+      <label for="name">Name: </label>
+      <input type="text" id="name" name="name" required />
+      <label for="description">Description: </label>
+      <textarea id="description" name="description" rows="4" cols="50" required></textarea>
+      <label for="pic"
+        >Image:
+        <i class="fa fa fa-camera"></i>
+        <input type="file" id="pic" name="pic" required />
+      </label>
+
+      <button>Submit</button>
+    </form>
+
+    <div>
+      <a href="/logout">Logout</a>
+  </div>
+
+    <footer>Time / Date</footer>
+  </body>
+  <script type="text/javascript" src="JS/script.js" defer></script> 
+</html>

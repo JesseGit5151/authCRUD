@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/gallerystyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body id="/gallery">
+    <!--include header-->
+    <%- include('include/_header') %>
+    <!--/include header-->
+    Final route gallery
+
+    <div class="tagcontainer">
+        <a href="/gallery" class="tag active">All</a>
+        <% locals.categories.forEach(item => { %>
+                <a href="/gallery/<%= item %> " class="tag"><%= item %> </a>
+        <% }) %> 
+    </div>
+    <div class="cardscontainer">
+    
+        <% locals.data.forEach(item => { %>
+            <div class="display-cards"> 
+            <img src="/<%= item.image %>" />
+            <h3><%= item.name %></h3>
+            <p><%= item.description %></p>
+            <span><%= item.category %></span>
+            <i style="font-size:24px" class="fa">&#xf014;</i>
+            </div>
+        <% }) %>
+        </div>
+        <div>
+            <a href="/logout">Logout</a>
+        </div>
+</body>
+<script src="/JS/script.js" defer></script>
+
+</html>

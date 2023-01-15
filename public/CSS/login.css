@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #1C1F24;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+
+h1 {
+    color: #1C1F24;
+    margin-bottom: 30%;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    margin: auto;
+}
+form label {
+    font-weight: 700;
+}
+
+form input {
+    border: 1px solid lightgray;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    margin-bottom: 15%;
+    outline: none;
+}
+/* Fixed chromes autofill background color issue */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+
+form i {
+    color: #1C1F24;
+}
+form .submitBtn {
+    border-style: none;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    background-color: #1C1F24;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px 2px;
+    margin-top: 4%;
+}
+div.regHeroImage {
+    position:relative;
+    font-size: 20px;
+    color: white;
+    height: inherit;
+    background-image: url('/imgs/pexels-anni-roenkae-3435272.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 60%;
+    border-radius: 60px 0px 0px 60px;
+}
+div.regHeroImage p {
+    position: absolute;
+    top: 35%;
+    left: 21%;
+    font-size: 70px;
+}
