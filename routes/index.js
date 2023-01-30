@@ -32,21 +32,32 @@ router.post(
 //Hash n Salt process
 router.post("/register", (req, res) => {
   try {
-    const saltHash = genPassword(req.body.password);
+    //Check to see if req.body.username already exists in database
+    Users.findOne({ username: req.body.username }, function (err, result) {
+      if (err) throw err;
+      if (result) {
+        let a = `User already exists. Please pick a different name.`
+        res.render('_register', {
+          a
+        })
+      } else {
+        const saltHash = genPassword(req.body.password);
 
-    const salt = saltHash.salt;
-    const hash = saltHash.hash;
+        const salt = saltHash.salt;
+        const hash = saltHash.hash;
 
-    const newUser = new Users({
-      username: req.body.username,
-      hash: hash,
-      salt: salt,
+        const newUser = new Users({
+          username: req.body.username,
+          hash: hash,
+          salt: salt,
+        });
+
+        newUser.save().then((user) => {
+          console.log(user);
+        });
+        res.redirect("/login");
+      }
     });
-
-    newUser.save().then((user) => {
-      console.log(user);
-    });
-    res.redirect("/login");
   } catch (error) {
     console.log(error);
   }
@@ -55,9 +66,12 @@ router.post("/register", (req, res) => {
 //Post on form
 router.post("/form", upload.single("pic"), async (req, res) => {
   let imgPath = req.file.path;
+  //Capitalize first letter of any string
+  let category = req.body.category
+  const capitalCategory = category.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
 
   await req.user.favorites.push({
-    category: req.body.category,
+    category: capitalCategory,
     name: req.body.name,
     description: req.body.description,
     image: imgPath,
@@ -70,17 +84,16 @@ router.post("/form", upload.single("pic"), async (req, res) => {
  * -------------- GET ROUTES ----------------
  */
 
-//Home Page(Welcome)
-router.get("/", (req, res) => {
-  res.render("_index");
-});
 //Login Pgae
 router.get("/login", (req, res) => {
   res.render("_login");
 });
 //Register Page
 router.get("/register", (req, res) => {
-  res.render("_register");
+  let a = ''
+  res.render("_register", {
+    a
+  });
 });
 
 //User Form Page
@@ -110,7 +123,7 @@ router.get("/gallery", async (req, res) => {
 router.get("/logout", (req, res) => {
   console.log("dsgfrgerg");
   req.logout();
-  res.redirect("/");
+  res.redirect("/register");
 });
 
 router.get("/login-failure", (req, res) => {
@@ -150,10 +163,10 @@ router.post("/delete/:objectText", async (req, res) => {
         userObject.splice(i, 1);
       }
     }
-    await req.user.save()
+    await req.user.save();
     res.redirect("/gallery");
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 });
 

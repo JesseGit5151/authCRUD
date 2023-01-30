@@ -6,8 +6,27 @@ body {
 
 /*************  nav start ****************/
 #header .nav {
-    width: 50%;
-    margin-left: 47%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+#header nav {
+    margin-right: 36px;
+}
+#header .nav a.logout {
+    margin-right: 12px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 900;
+    width: 74px;
+    font-size: 13px;
+    text-decoration: none;
+    padding: 8px 12px;
+    border: .5px solid #1C1F24;
+}
+#header .nav a.logout:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    border: .5px solid white;
 }
 
 #header nav ul {
@@ -17,17 +36,35 @@ body {
 }
 
 #header nav ul li {
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 #header nav ul li a {
     text-decoration: none;
     color: black;
-    font-size: 1.2rem;
+    font-size: medium;
     font-weight: 500;
+}
+#header nav ul li a:hover {
+    font-weight: 700;
+}
+
+a.active {
+    font-weight: 700 !important;
+}
+.true {
+    color: whitesmoke;
+    background-color: #1C1F24 !important;
 }
 
 /*************  nav end ****************/
+
+h1 {
+    text-align: center;
+    margin-bottom: 5%;
+    font-size: 42px;
+    font-weight: 100;
+}
 
 .tagcontainer {
     width: 87%;
@@ -35,29 +72,30 @@ body {
     margin: auto;
     justify-content: flex-start;
     margin-bottom: 4rem;
+    gap: 4px;
 }
 .tagcontainer .tag {
     border-style: none;
     cursor: pointer;
     outline: none;
     text-decoration-line: none;
-    background-color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.04);
     overflow: hidden;
     text-align: center;
     border-radius: 7px;
     padding: 6px 12px;
     margin: 0 0.3rem 0 0;
 }
-.tag:focus, .tag:active {
-    background-color: black;
+.tag:hover {
+    background-color: rgba(0, 0, 0, 0.06);
 }
 
 /* a.active {
     border: 2px solid red;
 } */
-.active {
+/* .active {
     color: red;
-}
+} */
 
 img {
     width: inherit;
@@ -80,6 +118,7 @@ img {
     background-color: whitesmoke;
     box-shadow: 0 5px 15px rgb(0 0 0 / 11%);
     position: relative;
+    border-radius: 5px;
 }
 .display-cards h3, p {
     margin-left: 6px;

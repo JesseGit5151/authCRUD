@@ -20,6 +20,10 @@ form {
     width: 280px;
     margin: auto;
 }
+form span.usernameErr {
+    font-size: 13px;
+    color: palevioletred;
+}
 form label {
     font-weight: 700;
 }

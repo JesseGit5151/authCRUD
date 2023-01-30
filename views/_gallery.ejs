@@ -13,10 +13,9 @@
     <!--include header-->
     <%- include('include/_header') %>
     <!--/include header-->
-    Final route gallery
-
+<h1>All Your Favorites In One Place.</h1>
     <div class="tagcontainer">
-        <a href="/gallery" class="tag active">All</a>
+        <a href="/gallery" class="tag">All</a>
         <% locals.categories.forEach(item => { %>
                 <a href="/gallery/<%= item %> " class="tag"><%= item %> </a>
         <% }) %> 
@@ -34,7 +33,7 @@
         <% }) %>
         </div>
         <div>
-            <a href="/logout">Logout</a>
+            
         </div>
 </body>
 <script src="/JS/script.js" defer></script>

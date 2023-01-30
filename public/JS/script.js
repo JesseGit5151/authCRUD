@@ -3,14 +3,14 @@ let tags = document.querySelectorAll(".tag");
 const trashBtn = document.querySelectorAll(".fa");
 
 //Menu links
-let links = document.querySelectorAll('.links a')
+let links = document.querySelectorAll(".links a");
 //Body id of current page
-let bodyId = document.querySelector('body').id
+let bodyId = document.querySelector("body").id;
 //Nav active link
-for(let i = 0; i < links.length; i++) {
-    if(links[i].dataset.active === bodyId) {
-        links[i].classList.add('active')
-    }
+for (let i = 0; i < links.length; i++) {
+  if (links[i].dataset.active === bodyId) {
+    links[i].classList.add("active");
+  }
 }
 //Delete functionality
 trashBtn.forEach((item) => {
@@ -27,14 +27,16 @@ trashBtn.forEach((item) => {
     displayCard.remove();
   });
 });
-//Highlighted tag functionality
-tags.forEach((item) => {
-  item.addEventListener("click", async (e) => {
-    // item.className.toggle('active')
 
-    
-    // let current = document.getElementsByClassName("active")
-    // current[0].className = current[0].className.replace(" active");
-    // e.target.className +=  " active"
+//If pathname contains the innerText of the currently clicked tag button, add the active class to the tag.
+window.onload = () => {
+  tags.forEach((item) => {
+      let pathname = document.location.pathname.split("/")[2];
+      if(decodeURI(pathname) === item.innerText) {
+        item.classList.add('true')
+      } else if(!pathname) {
+        tags[0].classList.add('true')
+      }
+      //
   });
-});
+}
